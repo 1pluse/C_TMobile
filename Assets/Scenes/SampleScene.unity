@@ -404,7 +404,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Speed: 5
-  InputVec: {x: 0, y: 0}
+  limitMax: {x: 2.7, y: 4.9}
+  limitMin: {x: -2.7, y: -4.9}
 --- !u!70 &1010586980
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
