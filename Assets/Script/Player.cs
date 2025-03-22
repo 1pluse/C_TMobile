@@ -18,7 +18,7 @@ public class Player : MonoBehaviour
 
     private void Update()
     {
- 
+        Arealimits();
     }
     // Update is called once per frame
     void FixedUpdate()
@@ -39,5 +39,16 @@ public class Player : MonoBehaviour
         Gizmos.DrawLine(limitMin, new Vector2(limitMin.x, limitMax.y));
         Gizmos.DrawLine(limitMax, new Vector2(limitMax.x, limitMin.y));
         Gizmos.DrawLine(limitMax, new Vector2(limitMin.x, limitMax.y));
+    }
+    void Arealimits()
+    {
+        Vector2 temp = transform.position; // 현재 위치 가져오기
+
+        // X축 제한
+        temp.x = Mathf.Clamp(temp.x, limitMin.x, limitMax.x);
+        // Y축 제한
+        temp.y = Mathf.Clamp(temp.y, limitMin.y, limitMax.y);
+
+        transform.position = temp; // 위치 업데이트
     }
 }
